@@ -2,7 +2,7 @@ var { buildSchema } = require("graphql");
 var schema = buildSchema(`
 
   type Movie{
-    movieid:String!
+      id:String!
       name:String!
       genre:String!
       year:String!
@@ -12,6 +12,7 @@ var schema = buildSchema(`
   }
    type Mutation {
        createMovie(name: String! genre:String! year:String!): Movie
+       deleteMovie(id:String!):String !
      }
 `);
 module.exports = schema;
